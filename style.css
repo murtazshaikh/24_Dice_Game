@@ -227,6 +227,10 @@ main{
     font-size: 35%;
   }
 
+  body{
+    transform: rotate(90deg);
+  }
+
   .name{
     font-size: 2rem;
   }
