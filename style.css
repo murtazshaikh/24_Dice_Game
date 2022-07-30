@@ -87,7 +87,7 @@ main{
 }
 
 .current{
-  width: 65%;
+  width: 75%;
 
   color: #fff;
   background-color: #c7365f;
@@ -101,7 +101,7 @@ main{
 }
 
 .current-label{
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   text-transform: uppercase;
 
   color: #ddd;

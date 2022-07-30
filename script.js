@@ -14,7 +14,7 @@ const btnHold = document.querySelector('.btn--hold');
 
 let scores, currentScore, activePlayer, playing;
 
-const init = function(){
+const init = () => {
   scores = [0, 0];
   currentScore = 0;
   activePlayer = 1;
@@ -33,7 +33,7 @@ const init = function(){
 };
 init();
 
-const switchPlayer = function(){
+const switchPlayer = () => {
   document.getElementById(`current--${activePlayer}`).textContent = 0;
   currentScore = 0;
   activePlayer = activePlayer === 1 ? 2 : 1;
@@ -41,7 +41,7 @@ const switchPlayer = function(){
   player2El.classList.toggle('player--active');
 };
 
-btnRoll.addEventListener('click', function(){
+const randomDice = () => {
   if(playing){
     const dice = Math.trunc(Math.random() * 6) + 1;
 
@@ -55,9 +55,9 @@ btnRoll.addEventListener('click', function(){
       switchPlayer();
     }
   }
-});
+}
 
-btnHold.addEventListener('click', function(){
+const holdPlayer = () => {
   if(playing){
     scores[activePlayer-1] += currentScore;
 
@@ -74,6 +74,10 @@ btnHold.addEventListener('click', function(){
       switchPlayer();
     }
   }
-});
+}
+
+btnRoll.addEventListener('click', randomDice);
+
+btnHold.addEventListener('click', holdPlayer);
 
 btnNew.addEventListener('click', init);
